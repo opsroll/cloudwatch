@@ -1,0 +1,16 @@
+---
+# tasks file for cloudwatch
+
+- name: fetch cloudwatch setup script
+  get_url: >
+    url=https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
+    dest=/usr/local/bin/awslogs-agent-setup
+    mode=770
+
+- name: generate the configuration for log capturing
+  template: >
+    src=awslogs.conf.j2
+    dest=/tmp/awslogs.conf
+
+- name: setup cloudwatch log forwarding
+  command: awslogs-agent-setup --non-interactive --configfile=/tmp/awslogs.conf --region={{ansible_ec2_placement_region}}

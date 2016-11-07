@@ -1,0 +1,43 @@
+---
+# defaults file for cloudwatch
+
+log_files:
+- /var/log/apt/history.log
+- /var/log/apt/term.log
+- /var/log/landscape/sysinfo.log
+- /var/log/sssd/krb5_child.log
+- /var/log/sssd/ldap_child.log
+- /var/log/sssd/sssd_aws.cs.log
+- /var/log/sssd/sssd.log
+- /var/log/sssd/sssd_nss.log
+- /var/log/sssd/sssd_pac.log
+- /var/log/sssd/sssd_pam.log
+- /var/log/sssd/sssd_ssh.log
+- /var/log/sssd/sssd_sudo.log
+- /var/log/unattended-upgrades/unattended-upgrades-shutdown.log
+- /var/log/upstart/certmonger.log
+- /var/log/upstart/console-setup.log
+- /var/log/upstart/container-detect.log
+- /var/log/upstart/cryptdisks.log
+- /var/log/upstart/mountall.log
+- /var/log/upstart/networking.log
+- /var/log/upstart/network-interface-eth0.log
+- /var/log/upstart/pollinate.log
+- /var/log/upstart/procps-static-network-up.log
+- /var/log/upstart/procps-virtual-filesystems.log
+- /var/log/upstart/rsyslog.log
+- /var/log/upstart/sssd.log
+- /var/log/upstart/systemd-logind.log
+- /var/log/auth.log
+- /var/log/boot.log
+- /var/log/cloud-init.log
+- /var/log/cloud-init-output.log
+- /var/log/dpkg.log
+- /var/log/ipaclient-install.log
+- /var/log/kern.log
+- /var/log/syslog
+- /var/log/udev
+- /var/log/dmesg
+- /var/log/awslogs.log
+- /var/log/awslogs-agent-setup.log
+- /var/log/alternatives.log

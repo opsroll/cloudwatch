@@ -1,0 +1,18 @@
+# Refer to http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AgentReference.html for details.
+
+[general]
+# Path to the CloudWatch Logs agent's state file. The agent uses this file to maintain
+# client side state across its executions.
+state_file = /var/awslogs/state/agent-state
+
+{% for log_file in log_files %}
+
+[{{log_file}}]
+datetime_format = %Y-%m-%d %H:%M:%S
+file = {{log_file}}
+buffer_duration = 5000
+log_stream_name = {instance_id}
+initial_position = start_of_file
+log_group_name = {{log_file}}
+
+{% endfor %}
